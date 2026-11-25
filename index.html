@@ -125,10 +125,10 @@
     <div class="container">
         <h1>Privacy Policy</h1>
         <p class="subtitle">ReelsRot</p>
-        <p class="effective-date"><strong>Effective Date:</strong> July 6, 2026</p>
+        <p class="effective-date"><strong>Effective Date:</strong> November 25, 2026</p>
 
         <div class="highlight-box">
-            <p><strong>Summary:</strong> ReelsRot is a completely offline app that does <strong>not collect, share, or transmit</strong> any personal information, app usage statistics, or camera data to any servers. All features—including app blocking and camera-based exercises—operate 100% locally on your device. We don't even have internet permissions.
+            <p><strong>Summary:</strong> ReelsRot processes and stores your app usage statistics, reel counts, blocking rules, and camera-based exercise frames <strong>100% locally on your device</strong>—we never upload your screen content, app activity, or camera feeds to any server. Network access is only used for optional Google Sign-In, Google Play in-app purchases/subscriptions, and basic Firebase Analytics. There are no ads in the App.
             </p>
         </div>
 
@@ -142,91 +142,103 @@
             By using the App, you agree to the practices described in this Privacy Policy.
         </p>
 
-        <h2>2. Information We Collect</h2>
+        <h2>2. Information We Collect &amp; Process</h2>
         <p>
-            <strong>We do not collect any personal information.</strong> The App operates entirely offline and does not require an account, login, or any personal details to function. Specifically:
+            ReelsRot is designed with a privacy-first, local-first architecture. You can use core tracking and blocking features without creating an account. Depending on the features you choose to use, the following information may be processed:
         </p>
         <ul>
-            <li>We do <strong>not</strong> collect your name, email address, phone number, or any personally identifiable information.</li>
-            <li>We do <strong>not</strong> collect location data.</li>
-            <li>We do <strong>not</strong> use any analytics trackers or advertising networks (there are no ads in the App).</li>
-            <li>The App does <strong>not</strong> have the Android Internet permission (`android.permission.INTERNET`), meaning it is physically impossible for the App to send your data anywhere.</li>
+            <li><strong>Optional Account Information (Google Sign-In):</strong> If you choose to sign in with Google, we use Credential Manager and Firebase Authentication to authenticate you. This processes your Google ID token and basic profile details (such as your display name, email address, and Firebase user ID).</li>
+            <li><strong>Purchases &amp; Subscriptions:</strong> If you upgrade to ReelsRot Pro (monthly, yearly, or lifetime), your transaction is handled directly by Google Play Billing. We do not collect or store your payment card or billing details; we only check your purchase entitlement status via Google Play.</li>
+            <li><strong>Basic App Analytics:</strong> The App includes Firebase Analytics to understand general app stability, usage trends, and feature engagement (such as app opens and diagnostic/usage events).</li>
+            <li><strong>No Ads &amp; No Location Tracking:</strong> We do <strong>not</strong> display advertisements, do <strong>not</strong> use third-party advertising networks, and do <strong>not</strong> collect your precise or approximate location.</li>
         </ul>
 
         <h2>3. Data Stored Locally on Your Device</h2>
         <p>
-            To provide its core functionality, the App processes and stores certain data <strong>locally on your device only</strong>:
+            All personal productivity, blocking, and challenge data is processed and stored <strong>locally on your device only</strong>:
         </p>
         <ul>
-            <li><strong>App Usage Data:</strong> The App uses the Package Usage Stats permission to monitor which apps you are using and for how long. This data is strictly used to enforce the time limits and blocks you have configured. It is processed in real-time and stored locally.</li>
-            <li><strong>Accessibility & Scroll Data:</strong> The App uses the Accessibility Service API to monitor screen scroll events in real-time. This is used to detect endless scrolling in distracting apps. This data is analyzed live in memory and is <strong>never saved, recorded, or transmitted.</strong></li>
-            <li><strong>App Settings & Limits:</strong> Your configured screen time limits, blocked app lists, and preferences are stored securely on your device.</li>
-            <li><strong>Camera Data:</strong> During exercise challenges, the App uses your camera to track your movements. These camera frames are processed in real-time in the device's memory and are <strong>never saved, recorded, or transmitted.</strong></li>
+            <li><strong>App Usage Data:</strong> The App uses the Package Usage Stats permission to monitor which apps you are using and for how long. This data is used strictly to enforce the time limits and blocks you have configured and to display your on-device statistics.</li>
+            <li><strong>Accessibility, Reel Count &amp; Scroll Data:</strong> The App uses the Accessibility Service API to detect short-form video feeds (such as Reels and Shorts), count reels watched, and trigger blocks in real time. Screen content is analyzed live in memory and is <strong>never recorded, saved, or transmitted off your device.</strong> Only anonymous reel-count timestamps and target package names are stored locally for your statistics.</li>
+            <li><strong>App Settings, Limits &amp; Progress:</strong> Your selected blocked apps, blocking modes (Easy, Strict, Hardcore), daily time and reel limits, intervention history, workout/challenge sessions, gamification progress (XP, levels, and streaks), and preferences are stored locally on your device.</li>
+            <li><strong>Camera Data:</strong> During physical exercise unlock challenges (such as push-ups and squats), the App uses your camera to track your repetitions. Camera frames are processed live in memory and are <strong>never saved, recorded, or transmitted.</strong></li>
         </ul>
         <p>
-            This data is stored using Android's Room database and DataStore Preferences. It remains entirely on your device and is <strong>never transmitted</strong> to any server or third party. If you uninstall the App or clear its data, all locally stored data is permanently deleted.
+            This local data is stored using Android's Room database and DataStore Preferences. It remains on your device and is not uploaded to our servers.
         </p>
 
-        <h2>4. Camera Usage & Exercise Tracking</h2>
+        <h2>4. Camera Usage &amp; Exercise Tracking</h2>
         <p>
-            The App requests <strong>camera permission</strong> to facilitate physical exercise challenges designed to help you stop scrolling and regain focus.
+            The App requests <strong>camera permission</strong> solely to power optional physical exercise challenges (push-ups and squats) designed to help you break scrolling habits and regain focus.
         </p>
         <ul>
-            <li>The camera is used for real-time motion and pose tracking using on-device machine learning (Google MediaPipe).</li>
-            <li>The video frames are analyzed <strong>live in memory</strong> solely to count your repetitions or verify your exercises.</li>
-            <li>No video or images are ever captured, saved to your gallery, or transmitted over the internet.</li>
-            <li>All machine learning processing happens <strong>entirely on your device</strong>, without connecting to external servers.</li>
+            <li>The camera is used for real-time motion and pose tracking using on-device machine learning (<strong>Google ML Kit Pose Detection</strong>).</li>
+            <li>Video frames are analyzed <strong>live in memory</strong> only to count your repetitions and verify completed exercises.</li>
+            <li>No video or photos are ever captured, saved to your gallery, or transmitted over the internet.</li>
+            <li>All pose detection processing happens <strong>entirely on your device</strong>.</li>
         </ul>
 
         <h2>5. Accessibility Service API Usage</h2>
         <p>
-            ReelsRot uses the <strong>Accessibility Service API</strong> to provide its core features, specifically to detect when you are endlessly scrolling in distracting apps and to apply blocks.
+            ReelsRot uses the Android <strong>Accessibility Service API</strong> to provide its core short-form video tracking and blocking features:
         </p>
         <ul>
-            <li><strong>Why we need it:</strong> The Accessibility Service is used to monitor screen content and scroll events in real-time to detect scrolling behavior in the apps you have chosen to block.</li>
-            <li><strong>What we do NOT do:</strong> We do <strong>not</strong> use the Accessibility Service to collect, store, or transmit your personal data, passwords, messages, or screen content. All processing is done locally on your device in real-time and is discarded immediately after analysis.</li>
+            <li><strong>Why we need it:</strong> The Accessibility Service monitors window state changes, content changes, and scroll events in real time so the App can detect short-form content (such as Reels or Shorts), count reels watched, display your reel-counter overlay, and launch blocking or challenge screens when limits are reached.</li>
+            <li><strong>What we do NOT do:</strong> We do <strong>not</strong> use the Accessibility Service to collect, store, or transmit your personal messages, passwords, financial details, or screen content. Accessibility data never leaves your phone and is discarded immediately after real-time analysis.</li>
         </ul>
 
-        <h2>6. Other Permissions Explained</h2>
-        <p>In addition to the Accessibility Service, the App requests the following Android permissions, all of which are strictly required for its core app-blocking and exercise features:</p>
+        <h2>6. Permissions Explained</h2>
+        <p>The App requests the following Android permissions strictly to support its blocking, tracking, exercise, and billing features:</p>
         <ul>
-            <li><strong>Usage Access (PACKAGE_USAGE_STATS):</strong> Required to monitor which apps are currently running so the App can enforce your time limits and block distracting apps.</li>
-            <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> Required to draw the blocking screen over distracting apps when your set time limits are reached or an exercise challenge is triggered.</li>
-            <li><strong>Camera:</strong> Required for the exercise tracking challenges to verify your physical movements using on-device vision models.</li>
-            <li><strong>Foreground Service:</strong> Required to keep the time-tracking service running reliably in the background so your app limits are accurately enforced even when ReelsRot is closed.</li>
-            <li><strong>Query All Packages (QUERY_ALL_PACKAGES):</strong> Required to read the list of installed apps on your device so you can choose which ones to block. This list is never transmitted off your device.</li>
-            <li><strong>Device Administrator (BIND_DEVICE_ADMIN):</strong> Used as an optional strict mode feature to prevent you from easily uninstalling the app while a focus session is active.</li>
-            <li><strong>Notifications (POST_NOTIFICATIONS):</strong> Required to display ongoing service statuses and alert you when limits are reached.</li>
-            <li><strong>Advertising ID (AD_ID):</strong> This permission is included by underlying system dependencies. However, we do not show advertisements, nor do we track or use this identifier for advertising purposes.</li>
+            <li><strong>Usage Access (<code>PACKAGE_USAGE_STATS</code>):</strong> Required to monitor foreground app usage time so the App can enforce your daily limits and show usage statistics.</li>
+            <li><strong>Display Over Other Apps (<code>SYSTEM_ALERT_WINDOW</code>):</strong> Required to display the optional floating reel counter and blocking/challenge overlays over distracting apps.</li>
+            <li><strong>Camera (<code>CAMERA</code>):</strong> Required only if you use camera-based exercise challenges (push-ups or squats) to verify movements using on-device pose detection.</li>
+            <li><strong>Foreground Service (<code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SPECIAL_USE</code>):</strong> Required to keep usage tracking and blocking protection running reliably in the background.</li>
+            <li><strong>Query All Packages (<code>QUERY_ALL_PACKAGES</code>):</strong> Required to list installed apps on your device so you can choose which apps to track or block. This list is never transmitted off your device.</li>
+            <li><strong>Device Administrator (<code>BIND_DEVICE_ADMIN</code>):</strong> Optional permission used by strict/anti-uninstall protection features to prevent easily uninstalling the App while protection is active.</li>
+            <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>):</strong> Required to show persistent tracking status notifications and notify you about limits, streaks, or interventions.</li>
+            <li><strong>Run at Startup (<code>RECEIVE_BOOT_COMPLETED</code>):</strong> Required to automatically resume your app-tracking and blocking protection after your device restarts or the App updates.</li>
+            <li><strong>Wake Lock &amp; Battery Optimization Exemption (<code>WAKE_LOCK</code>, <code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code>):</strong> Used to ensure scheduled workers, timers, and background tracking continue reliably without being stopped by aggressive system battery restrictions.</li>
+            <li><strong>Google Play Billing (<code>com.android.vending.BILLING</code>):</strong> Required to process optional Pro subscriptions and Lifetime upgrades and to restore previous purchases via Google Play.</li>
+            <li><strong>Advertising ID (<code>com.google.android.gms.permission.AD_ID</code>) &amp; Internet Access:</strong> Included by Google Play Services and Firebase SDK dependencies for analytics, optional Google Sign-In, and Google Play Billing. We do not display advertisements.</li>
         </ul>
 
         <h2>7. Third-Party Services</h2>
         <p>
-            The App utilizes <strong>Google MediaPipe Tasks Vision</strong> for on-device pose detection and movement tracking during exercise challenges. This machine learning library processes data <strong>entirely locally on your device</strong> and does not send any camera feeds, images, or telemetry to Google or any external servers. 
+            ReelsRot integrates the following third-party libraries and Google services:
+        </p>
+        <ul>
+            <li><strong>Google ML Kit Pose Detection:</strong> Used for on-device body pose estimation during push-up and squat challenges. Camera frames are processed locally on your device.</li>
+            <li><strong>Firebase Authentication &amp; Google Credential Manager:</strong> Used if you choose to sign in with your Google account. Governed by Google's Privacy Policy.</li>
+            <li><strong>Firebase Analytics:</strong> Used to collect aggregated, non-sensitive app usage and engagement telemetry to help improve stability and features.</li>
+            <li><strong>Google Play Billing:</strong> Used to handle subscriptions and one-time Pro purchases securely through the Google Play Store.</li>
+        </ul>
+        <p>
+            You can review Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
         </p>
 
         <h2>8. Data Sharing</h2>
         <p>
-            Because the App operates 100% offline and lacks internet access permissions, we do <strong>not share, sell, or transmit</strong> any of your data to third parties, analytics providers, or advertising networks.
+            We do <strong>not</strong> sell your personal information, and we do <strong>not</strong> share your app usage logs, reel counts, blocked app lists, accessibility data, or camera feeds with third parties. Data processed by third-party SDKs (such as Google Play Billing, Firebase Authentication, and Firebase Analytics) is limited to what is necessary to provide sign-in, purchase verification, and basic analytics.
         </p>
 
         <h2>9. Children's Privacy</h2>
         <p>
-            The App does not knowingly collect any personal information from anyone, including children under the age of 13. Since the App operates entirely offline and collects no personal data whatsoever, it is safe for users of all ages.
+            ReelsRot is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through optional sign-in, please contact us so we can assist with deletion.
         </p>
 
         <h2>10. Data Security</h2>
         <p>
-            All data generated by the App is stored locally on your device using Android's built-in secure storage mechanisms. Because the data never leaves your device, its security is guaranteed by your device's operating system and screen lock protections.
+            Your tracking, reel count, and blocking data is stored locally on your device using Android's standard application sandbox storage (Room database and DataStore). Network communications for Google Sign-In, Google Play Billing, and Firebase Analytics are encrypted in transit using HTTPS/TLS.
         </p>
 
         <h2>11. Data Retention and Deletion</h2>
         <p>
-            All App data is stored locally on your device. You can delete all data at any time by:
+            You remain in full control of your data and can delete it at any time:
         </p>
         <ul>
-            <li>Clearing the App's data through your device's Settings → Apps → ReelsRot → Storage → Clear Data.</li>
-            <li>Uninstalling the App, which automatically removes all associated data.</li>
+            <li><strong>Delete Local App Data:</strong> Clear all locally stored settings, reel counts, and statistics via your device's <strong>Settings → Apps → ReelsRot → Storage → Clear Data</strong>, or by uninstalling the App.</li>
+            <li><strong>Delete Your Account:</strong> If you signed in with Google, you can permanently delete your authentication account directly inside the App via <strong>Settings → Account → Delete Account</strong>.</li>
         </ul>
 
         <h2>12. Changes to This Privacy Policy</h2>
@@ -239,7 +251,7 @@
             If you have any questions or concerns about this Privacy Policy or the App's data practices, please contact us at:
         </p>
         <p>
-            <strong>Email:</strong> <a href="mailto:[Your Contact Email]">[Your Contact Email]</a>
+            <strong>Email:</strong> <a href="mailto:rylpix.app@gmail.com">rylpix.app@gmail.com</a>
         </p>
 
         <div class="footer">
